@@ -5,13 +5,14 @@ const points = [409, 270, 269, 267, 0, 37, 39, 40, 185, 61, 146, 91, 181, 84, 17
                 76, 77, 90, 180, 85, 16, 315, 404, 320, 307, 306, 408, 304, 303, 302, 11, 72, 73, 74, 184];
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.size(width, height);
   video.hide();
 
   facemesh = ml5.facemesh(video, modelReady);
   facemesh.on("predict", results => {
+    console.log("Facemesh predictions:", results);
     predictions = results;
   });
 }
