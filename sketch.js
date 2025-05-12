@@ -37,6 +37,10 @@ function drawFacemesh() {
     beginShape();
     for (let i = 0; i < points.length; i++) {
       const index = points[i];
+      if (index >= keypoints.length) {
+        console.error(`Index ${index} out of bounds for keypoints.`);
+        continue;
+      }
       const [x, y] = keypoints[index];
       vertex(x, y);
     }
