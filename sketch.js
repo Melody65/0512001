@@ -10,6 +10,8 @@ function setup() {
   video.size(width, height);
   video.hide();
 
+  console.log("Video capture started:", video);
+
   facemesh = ml5.facemesh(video, modelReady);
   facemesh.on("predict", results => {
     console.log("Facemesh predictions:", results);
