@@ -11,11 +11,9 @@ function setup() {
   video.hide();
 
   console.log("Video capture started:", video);
-  console.log("ml5 version:", ml5.version);
 
   facemesh = ml5.facemesh(video, modelReady);
   facemesh.on("predict", results => {
-    console.log("Facemesh predictions:", results);
     predictions = results;
   });
 }
